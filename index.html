@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NRDC Benefits Map</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./libraries/leaflet/leaflet.css" />
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="./libraries/jquery-3.3.1.min.js"></script>
+	<script src="./libraries/jquery.slidereveal.min.js"></script>
+	<script src="./libraries/topojson.min.js"></script>
+	<script src="./libraries/leaflet/leaflet.js"></script>
+	<script src="./libraries/typeahead.bundle.min.js"></script>
+	<script src="./libraries/chroma.min.js"></script>
+	<script src="https://unpkg.com/@mapbox/leaflet-pip@latest/leaflet-pip.js"></script>
+ 	<script>
+ 		var cb_2016_data = {};
+ 	</script>
+ 	<script src="./data/cb_2016_us_clean.js" ></script>
+ 	<script src="./data/benavomort20.js" ></script>
+ 	<script src="./data/benavomort30.js" ></script>
+ 	<script src="./data/bentotmon20.js" ></script>
+ 	<script src="./data/bentotmon30.js" ></script>
+ 	<script src="./data/bentotmorb20.js" ></script>
+ 	<script src="./data/bentotmorb30.js" ></script>
+ 	<script src="./data/bentotmort20.js" ></script>
+ 	<script src="./data/bentotmort30.js" ></script>
+ 	<script src="./options.js" ></script>
+   
+  </head>
+  <body>
+    <div id="app-body">
+    	<div id="map-typeahead"><input class="typeahead" type="text" placeholder="Search by county, address or zip code"></div>
+    	<div id="map-container"></div>
+    	<div id="overlay"></div>
+    	<div id="info-panel">
+    		<div class="data-container">
+    			<div class="close-button"></div>
+    			<div class="header"></div>
+	    		<div class="body">
+		    		<div id="benefits" class="table main">
+			    		<div class="t-row t-header">
+			    			<div class="t-cell"></div>
+			    			<div class="t-cell">
+				    			<DIV class="table sub">
+							    	<DIV class="t-row">
+							    		<DIV class="t-cell"></DIV><DIV class="t-cell col-header">2020</DIV><DIV class="t-cell col-header">2030</DIV>
+							    	</DIV>
+						    	</DIV>
+			    			</div>
+			    		</div>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+
+    
+    <div class="row-template" style="display: none;">
+		<div class="t-row">
+   			<div class="t-cell t-label data-label"></div>
+   			<div class="t-cell">
+		    	<DIV class="table sub">
+		    		<DIV class="t-row">
+			    		<DIV class="t-cell t-label">Low</DIV><DIV class="t-cell data-2020-low"></DIV><DIV class="t-cell data-2030-low"></DIV>
+			    	</DIV>
+			    	<DIV class="t-row">
+			    		<DIV class="t-cell t-label">High</DIV><DIV class="t-cell data-2020-high"></DIV><DIV class="t-cell data-2030-high"></DIV>
+			    	</DIV>
+		    	</DIV>    			
+   			</div>
+   		</div>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>

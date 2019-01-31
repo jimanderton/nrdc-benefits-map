@@ -1,0 +1,264 @@
+body {
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #04041b;
+	padding: 40px;
+}
+
+#app-body {
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+#dataset-sel {
+    font-size: 12px;
+    border: 0px;
+    background-color: transparent;
+    margin-bottom: 1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+ 
+#map-container {
+	height: 600px;
+	width: 100%;
+}
+
+#overlay {
+	position: absolute;
+	height: 600px;
+	width: 0px;
+	z-index: 2;
+}
+
+#info-panel {
+	display: block;
+    position: absolute !important;
+    height: initial !important;
+    top: initial !important;
+    bottom: 10px;
+    z-index: 1000;
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,1); 
+    border-radius: 4px;
+    margin-bottom: 10px;   
+    cursor: pointer; 
+}
+
+.close-button {
+	position: absolute;
+    display: block;
+    top: 6px;
+    right: 8px;
+    color: white;
+    opacity: .8;
+    border-color: transparent;
+    border-width: 10px;
+    border-style: solid;
+    border-left-color: #000000;
+    cursor: pointer;
+    margin-right: -10px;
+}
+
+.panel-shadow {
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	margin-right: 10px;
+}
+
+.data-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.data-container .header {
+	font-weight: normal;
+    font-size: 20px;
+    padding-bottom: .5em;
+}
+
+.data-container .body {
+	flex-grow: 1;
+}
+
+.map-ctrl {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 4px;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+#map-typeahead {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 1001;
+}
+
+.twitter-typeahead {
+	width:300px;
+}
+
+.typeahead, .tt-query, .tt-hint {
+	width: 100%;
+	padding: 8px;
+	font-size: 14px;
+	border: 2px solid rgba(0, 0, 0, .2);
+	border-radius: 4px;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.typeahead {
+  background-color: #fff;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: .25em;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-dataset {
+	overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 400px;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.tt-suggestion:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+.gist {
+  font-size: 14px;
+}
+
+
+.table {
+	display: table;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.table.main {
+	width: 450px;
+	font-size: 12px;
+	opacity: .8;
+}
+
+.t-row {
+	display: table-row;
+}
+
+.t-cell {
+	display: table-cell;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+.table.main > .t-row > .t-cell:first-child {
+	width: 150px;
+	vertical-align: middle;
+	padding: 4px 8px;
+	font-size: 14px;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+.sub .t-cell:first-child {
+	width: 50px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.sub .t-cell.t-label {
+	background-color: #2176b4ba;
+}
+
+.sub .t-cell {
+	width: 125px;
+	text-align: center;
+	padding: 4px;
+}
+
+.sub .t-cell:last-child {
+    border-left: 2px solid #ffffff;
+}
+
+.col-header {
+    background-color: #2176b4;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.t-cell.t-label {
+    background-color: #2176b4;
+    color: #ffffff;
+    border-bottom: 2px solid white;
+}
+
+.data-2020-high, .data-2030-high {
+    background-color: #e1e1e1;
+    border-bottom: 2px solid #ffffff;
+}
+
+.t-cell.data-2020-high {
+    border-left: 2px solid #ffffff;
+}
