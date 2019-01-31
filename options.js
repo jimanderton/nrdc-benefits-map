@@ -1,5 +1,5 @@
-var arcgis_sug_url = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?f=json&category=Address,Postal&countryCode=USA&maxSuggestions=15&searchExtent=-127,19,-61,50&text=%TEXT";
-var arcgis_find_url = "http://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?forStorage=false&f=json&";
+var arcgis_sug_url = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?f=json&category=Address,Postal&countryCode=USA&maxSuggestions=15&searchExtent=-127,19,-61,50&text=%TEXT";
+var arcgis_find_url = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?forStorage=false&f=json&";
 var scale_color_count = 5;
 var cb_2016_options = [
 	{
