@@ -6,14 +6,14 @@ var cb_2016_options = [
 		"name": "Number of avoided mortalities (high-end estimate, 2020)",
 		"ref_id": 'benavomort20',
 		"currency": false,
-		"decimal_places": 2,
+		"decimal_places": 1,
 		"chroma_scale": "RdYlBu"
 	},
 	{
 		"name": "Number of avoided mortalities (high-end estimate, 2030)",
 		"ref_id": 'benavomort30',
 		"currency": false,
-		"decimal_places": 2,
+		"decimal_places": 1,
 		"chroma_scale": "RdYlBu"
 	},	
 	{
@@ -201,7 +201,7 @@ var data_mapping = [
 				"currency": true
 			}
 		]
-	},
+	} /*,
 	{
 		"name": 'Total monetized benefits related to within-county emissions reductions',
 		"vals": [
@@ -230,7 +230,7 @@ var data_mapping = [
 				"currency": true
 			}
 		]
-	}
+	}*/
 ];
 
 

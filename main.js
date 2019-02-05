@@ -93,7 +93,7 @@
 	});
 	
 	$('#info-panel .close-button').on('click', function(){$('#info-panel').slideReveal('hide');})
-
+	
 	_initTypeahead();
 	
 	
@@ -113,7 +113,7 @@
 		ranges = chroma.limits(vals, 'q', scale_color_count);
 		// Now round those ranges off to avoid insane decimal placements
 		ranges = ranges.map(function(o) {
-			return Number(o.toFixed(option.decimal_places));
+			return Number(o.toFixed(o >= 10 ? 0 : 1));
 		});
 		
 		colorFn = chroma.scale(option.chroma_scale).classes(ranges);
@@ -166,8 +166,6 @@
 		// Get the county data and open the side panel
 		$.get('./data/counties/' + geoid + '.json', _displayInfoPanel);
 	}
-
-
 	
 	function _buildSelect() {
 		$select = $('<select id="dataset-sel"></select>');
@@ -257,30 +255,67 @@
 	function _displayInfoPanel(data) {
 		// Populate the ui with data
 		var state_id = selectedFtr.properties['GEOID'].slice(0,2);
-		var state = state_codes[state_id];
 		var $table = $('#benefits');
 		var $template = $('.row-template > div');
 		
-		$('.data-container .header').text(_fullCountyTitle(selectedFtr) + ', ' + state.name);
+		if(this.url.includes('/counties/')) {
+			$('.data-container .header').text(_fullCountyTitle(selectedFtr) + ', ' + _shortStateTitle(state_id) );
+			$('.data-container .toggle-link').text('View results for ' + _fullStateTitle(state_id));
+			$('.data-container .toggle-link').one('click', function(){
+				$.get('./data/states/' + selectedFtr.properties['GEOID'].slice(0,2) + '.json', _displayInfoPanel);
+			})
+
+		} else {
+			$('.data-container .header').text(_fullStateTitle(state_id));
+			$('.data-container .toggle-link').text('Return to results for ' + _fullCountyTitle(selectedFtr));
+			$('.data-container .toggle-link').one('click', function(){
+				$.get('./data/counties/' + selectedFtr.properties['GEOID'] + '.json', _displayInfoPanel);
+			})
+
+		}
+		
 		$table.find('> .t-row:not(.t-header)').remove();
 		data_mapping.forEach(function(map){
 			var $row = $template.clone();
 			$row.find('.data-label').text(map.name);
 			map.vals.forEach(function(val_map){
-				var data_val = val_map.currency ? '$' + data[val_map.id].toLocaleString() : data[val_map.id].toFixed(4);
+				var data_val = val_map.currency ? '$' + ((data[val_map.id]/1000).toFixed()*1000).toLocaleString() : data[val_map.id].toFixed(data[val_map.id] >= 10 ? 0 : 1);
 				$row.find('.data-' + val_map.year + '-' + val_map.type).text(data_val);
 			});
 			$table.append($row);
 		});
 		
 		// Open the side panel
-		infoPanel.slideReveal("show");
+		if(! panel_open) {
+			infoPanel.slideReveal("show");
+		}
 	}
 	
 	function _fullCountyTitle(ftr){
 		var name = ftr.properties.NAME
 		var lsad = ftr.properties.LSAD;
-		return name + ' ' + lsad_codes[lsad];
+		return name + (lsad=='00' ? '' : ' ' + lsad_codes[lsad]);
+	}
+	
+	function _fullStateTitle(state_id){
+		var state = state_codes[state_id];
+		switch (state_id) {
+		case '11':
+		case '60':
+		case '66':
+		case '69':
+		case '72':
+		case '74':
+		case '78':
+			return state.name;
+			break;
+		}
+		return "State of " + state.name;	
+	}
+	
+	function _shortStateTitle(state_id){
+		var state = state_codes[state_id];
+		return state.name;
 	}
 	
 })();
