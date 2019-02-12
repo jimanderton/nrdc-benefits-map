@@ -3,14 +3,14 @@ var arcgis_find_url = "https://geocode.arcgis.com/arcgis/rest/services/World/Geo
 var scale_color_count = 5;
 var cb_2016_options = [
 	{
-		"name": "Number of avoided mortalities (high-end estimate, 2020)",
+		"name": "Number of avoided premature deaths (high-end estimate, 2020)",
 		"ref_id": 'benavomort20',
 		"currency": false,
 		"decimal_places": 1,
 		"chroma_scale": "RdYlBu"
 	},
 	{
-		"name": "Number of avoided mortalities (high-end estimate, 2030)",
+		"name": "Number of avoided premature deaths (high-end estimate, 2030)",
 		"ref_id": 'benavomort30',
 		"currency": false,
 		"decimal_places": 1,
@@ -31,28 +31,28 @@ var cb_2016_options = [
 		"chroma_scale": "PRGn"
 	},
 	{
-		"name": "Total morbidity benefits (high-end estimate, 2030)",
+		"name": "Monetized benefits - avoided cases of non-fatal illness (high-end estimate, 2020)",
 		"ref_id": 'bentotmorb20',		
 		"currency": true,
 		"decimal_places": 0,
 		"chroma_scale": "BrBg"
 	},		
 	{
-		"name": "Total morbidity benefits (high-end estimate, 2030)",
+		"name": "Monetized benefits - avoided cases of non-fatal illness (high-end estimate, 2030)",
 		"ref_id": 'bentotmorb30',		
 		"currency": true,
 		"decimal_places": 0,
 		"chroma_scale": "BrBg"
 	},
 	{
-		"name": "Total mortality benefits (high-end estimate, 2020)",
+		"name": "Monetized benefits - avoided premature deaths (high-end estimate, 2020)",
 		"ref_id": 'bentotmort20',		
 		"currency": true,
 		"decimal_places": 0,
 		"chroma_scale": "YlOrRd"
 	},
 	{
-		"name": "Total mortality benefits (high-end estimate, 2030)",
+		"name": "Monetized benefits - avoided premature deaths (high-end estimate, 2030)",
 		"ref_id": 'bentotmort30',		
 		"currency": true,
 		"decimal_places": 0,
@@ -87,7 +87,7 @@ var styles = {
 
 var data_mapping = [
 	{
-		"name": 'Number of avoided mortalities',
+		"name": 'Number of avoided premature deaths',
 		"vals": [
 			{
 				"id": 'b',
@@ -145,7 +145,7 @@ var data_mapping = [
 		]
 	},
 	{
-		"name": 'Total mortality benefits',
+		"name": 'Monetized benefits - avoided premature deaths',
 		"vals": [
 			{
 				"id": 'j',
@@ -174,7 +174,7 @@ var data_mapping = [
 		]
 	},
 	{
-		"name": 'Total morbidity benefits',
+		"name": 'Monetized benefits - avoided cases of non-fatal illness',
 		"vals": [
 			{
 				"id": 'n',
