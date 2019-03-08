@@ -7,56 +7,56 @@ var cb_2016_options = [
 		"ref_id": 'benavomort20',
 		"currency": false,
 		"decimal_places": 1,
-		"chroma_scale": "RdYlBu"
+		"chroma_scale": "Blues"
 	},
 	{
 		"name": "Number of avoided premature deaths (high-end estimate, 2030)",
 		"ref_id": 'benavomort30',
 		"currency": false,
 		"decimal_places": 1,
-		"chroma_scale": "RdYlBu"
+		"chroma_scale": "Blues"
 	},	
 	{
 		"name": "Total monetized benefits (high-end estimate, 2020)",
 		"ref_id": 'bentotmon20',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "PRGn"
+		"chroma_scale": "GnBu"
 	},	
 	{
 		"name": "Total monetized benefits (high-end estimate, 2030)",
 		"ref_id": 'bentotmon30',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "PRGn"
+		"chroma_scale": "GnBu"
 	},
 	{
 		"name": "Monetized benefits - avoided cases of non-fatal illness (high-end estimate, 2020)",
 		"ref_id": 'bentotmorb20',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "BrBg"
+		"chroma_scale": "Greens"
 	},		
 	{
 		"name": "Monetized benefits - avoided cases of non-fatal illness (high-end estimate, 2030)",
 		"ref_id": 'bentotmorb30',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "BrBg"
+		"chroma_scale": "Greens"
 	},
 	{
 		"name": "Monetized benefits - avoided premature deaths (high-end estimate, 2020)",
 		"ref_id": 'bentotmort20',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "YlOrRd"
+		"chroma_scale": "Purples"
 	},
 	{
 		"name": "Monetized benefits - avoided premature deaths (high-end estimate, 2030)",
 		"ref_id": 'bentotmort30',		
 		"currency": true,
 		"decimal_places": 0,
-		"chroma_scale": "YlOrRd"	
+		"chroma_scale": "Purples"	
 	},		
 ];
 
