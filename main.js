@@ -41,6 +41,7 @@
 	    }
 	    if (!$select) _buildSelect();
 	    $(div).prepend($select);
+		$(div).append("<div style='text-align:right;font-size:12px;color:#505050'>IEc (2020) report values, high-end estimates</div>");
 	    return div;
 	    
 	    function __formatVal(val) {
